@@ -2,6 +2,7 @@
   "name": "gitmirrorpoc",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,10 @@
   "homepage": "https://github.com/MachoPanko/GitMirrorPOC#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "@octokit/app": "^16.0.1",
+    "@octokit/rest": "^22.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "octokit": "^5.0.3"
   }
 }
