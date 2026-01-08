@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub App POC</title>
+</head>
+<body>
+    <h1>GitHub App Installation</h1>
+    <p>Click the button below to install the GitHub App on your repositories.</p>
+    
+    <!-- 
+      IMPORTANT: Replace 'YOUR_APP_NAME' with the actual name of your app from its GitHub page.
+      The name is the one used in the URL, e.g., https://github.com/apps/YOUR_APP_NAME
+    -->
+    <a href="https://github.com/apps/ReadMi-rror/installations/new">
+        <button>Install GitHub App</button>
+    </a>
+
+    <hr>
+
+    <h2>Fetched README Content:</h2>
+    <pre id="readme-content">Loading...</pre>
+
+    <script>
+        // Fetch and display the README content from our server
+        fetch('/api/readme')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('readme-content').textContent = data.content;
+            })
+            .catch(error => {
+                console.error('Error fetching README:', error);
+                document.getElementById('readme-content').textContent = 'Error loading README.';
+            });
+    </script>
+</body>
+</html>
